@@ -1,0 +1,31 @@
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+body {
+  min-height: 100vh;
+  height: 100%;
+  overflow: hidden;
+  color: #ffffff;
+  background-color: #121519;
+  font-family: "Montserrat", "Roboto", "Droid Sans", "Helvatica Neue", sans-serif;
+}
+
+ul,
+ol {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+a {
+  text-decoration: none;
+}
+
+p {
+  margin: 1rem 0;
+}
+
+/*# sourceMappingURL=style.css.map */
