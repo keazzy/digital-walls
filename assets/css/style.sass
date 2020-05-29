@@ -69,6 +69,14 @@ p
   &__right 
     display: flex 
     align-items: center
+  &__right
+    .moon-outline
+        font-size: 28px
+        color: #fbc02d
+
+    .hamburger
+        font-size: 28px
+        color: $gray 
   
 .main
     grid-column: 1 / -1
@@ -417,6 +425,11 @@ p
   margin: 0 .5rem
 
 
+button
+  border: 0
+  background: transparent
+  &:focus
+    outline: none
 button:focus 
   outline: 0
   border-color: $lightblue

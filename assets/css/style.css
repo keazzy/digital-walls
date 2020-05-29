@@ -53,6 +53,14 @@ p {
   display: flex;
   align-items: center;
 }
+.header__right .moon-outline {
+  font-size: 28px;
+  color: #fbc02d;
+}
+.header__right .hamburger {
+  font-size: 28px;
+  color: #a0a0a0;
+}
 
 .main {
   grid-column: 1/-1;
@@ -381,6 +389,14 @@ p {
   border-radius: 50%;
   background-color: #FFF;
   margin: 0 0.5rem;
+}
+
+button {
+  border: 0;
+  background: transparent;
+}
+button:focus {
+  outline: none;
 }
 
 button:focus {
