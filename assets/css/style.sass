@@ -1,4 +1,4 @@
-//fonts
+//
     
 //Variables
 $header-height: 4rem
@@ -85,77 +85,79 @@ button
 
 .main
     grid-column: 1 / -1
-    padding: $default-spacing 
+    padding: $default-spacing
     overflow-x: hidden
     overflow-y: auto
     -webkit-overflow-scrolling: touch
     perspective: 1px
-
-
+    
     scroll-snap-type: block proximity
     scroll-snap-destination: 0% 100%
     scroll-snap-points-y: repeat(100%)
-
-
-    @media screen and ( min-width: 1024px )
+    
+    @media screen and (min-width:1024px) 
         grid-column: 2 / -1
 
 
 // === Nav == //
-.nav
-    display: none
-    border-right: 1px solid rgba(#fff, .1)
-    overflow-y: auto
-    -webkit-overflow-scrolling: touch
-    &__item:not(:last-child)
-        border-bottom: 1px solid rgba(#fff, .1)
+.nav 
+  display:none
+  border-right: 1px solid rgba(#FFF, .1)
+  overflow-y: auto
+  -webkit-overflow-scrolling: touch
+  
+  &__item:not(:last-child) 
+    border-bottom: 1px solid rgba(#FFF, .1)
+  
+  
+  &__link 
+    display:block
+    color: #FFF
+    font-weight:200
     
-    &__link
-        display: block
-        color: #fff
-        font-weight: 200
-
-        &:hover,
-        &:focus
-            background-color: rgba(#fff, .035)
-
-    @media screen and ( min-width: 1024px )
-        display: block
-        grid-column: 1 / 2
+    &:hover,
+    &:focus 
+      background-color:rgba(#FFF, .035)
+    
+  
+  
+  @media screen and (min-width:1024px) 
+    display:block
+    grid-column: 1 / 2
+  
 
 //==Section==//
 .section
     min-height: $section-height
-    min-height: calc( 100vh - #{$header-height} - #{$footer-height} )
-    padding-top: ($section-height / 2) + 50
-    margin-bottom: $section-height / 2
-    position: relative
+    min-height: calc(100vh - #{$header-height} - #{$footer-height})
+    padding-top:($section-height / 2) + 50
+    margin-bottom:$section-height / 2
+    position:relative
     transform-style: preserve-3d
     scroll-snap-align: start
 
     &__header
-        position: absolute
+        position:absolute
         top: 50px
         left: 0
         right: 0
         height: 500px
         padding: $default-spacing
         border-radius: $border-radius
-        background-size: cover
+        background-size:cover
         background-repeat: no-repeat
         background-position: center center
-        text-shadow: 0 0 20px rgba(0, 0, 0, 0.25)
+        text-shadow: 0 0 20px rgba(0,0,0,0.25)
 
-        &::after
-            content: ""
-            display: block
-            position: absolute
-            top: 50%
-            left: 0
-            right: 0
-            bottom: 0
-            background: linear-gradient(to bottom, rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 0.5) 100%)
-
+        &::after 
+            content:""
+            display:block
+            position:absolute
+            top:50%
+            left:0
+            right:0
+            bottom:0
+            background: linear-gradient(to bottom, rgba(0,0,0,0) 0%,rgba(0,0,0,0.5) 100%)
     &__title
         font-size: 3.5rem
         font-weight: 200
@@ -277,34 +279,92 @@ button
 
                 
 
+.text--large 
+  font-size: 2rem
+  font-weight: 200
 
+
+.arrow 
+  display: inline-block
+  padding: 3px
+  border-style:solid
+  border-width: 0 2px 2px 0
+
+  &--large 
+    padding:8px
+    border-width: 0 1px 1px 0
+  
+  &--right 
+    transform: rotate(-45deg)
+  
+
+  &--left 
+      transform: rotate(135deg)
+  
+
+  &--up 
+      transform: rotate(-135deg)
+  
+
+  &--down 
+      transform: rotate(45deg)
+  
+
+
+.media
+  display:flex
+  align-items:center
+  padding: $default-spacing
+  
+  &__img
+    width: 60px
+    height:60px
+    margin-right: $default-spacing / 2
+    border-radius: $border-radius / 2
+    object-position: center center
+    object-fit:cover
+
+  &__content
+    margin:0
+
+
+.user
+  margin-left:auto
+  text-align:center
+  padding-top:2rem
+  
+  &__name 
+    display:block
+    font-size:1.5rem
+    font-weight:200
+  
+  
+  &__img 
+    width:100px
+    height:100px
+    border-radius:50%
+    margin-bottom:.5rem
+    box-shadow: 0 0 38px rgba(0,0,0,0.30)
+
+
+.btn
+  display:flex
+  flex:0 0 50px
+  justify-content:center
+  align-items:center
+  width:50px
+  height:50px
+  border:0
+  padding:0
+  border:1px solid transparent
+  border-radius:50%
+  background-color:#FFF
+  margin:0 .5rem
+
+button:focus
+  outline:0
+  border-color: $lightblue
+  box-shadow:0 0 0 1px $lightblue
 
 
         
-.footer 
-  display:flex
-  align-items:center
-  grid-column: 1 / -1
-  padding:0 $default-spacing
-  border-top: 1px solid rgba(#FFF, .1)
-  
-  p 
-    margin-right:1rem
-  
-  
-  a 
-    color:#FFF
-    &:hover, &:focus 
-      text-decoration:underline
-    
-  
-  
-  &__more 
-    display:none
-    margin-left: auto
-    margin-right:0
-    
-    @media screen and (min-width: 768px) 
-      display:block
-    
-  
