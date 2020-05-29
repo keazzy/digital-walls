@@ -58,7 +58,7 @@ button
 
 .header,
 .footer
-    font-size: 2.5rem
+    font-size: .75rem
     font-weight: 200
     text-transform: uppercase
     letter-spacing: 1px
@@ -90,6 +90,8 @@ button
     overflow-y: auto
     -webkit-overflow-scrolling: touch
     perspective: 1px
+
+
     scroll-snap-type: block proximity
     scroll-snap-destination: 0% 100%
     scroll-snap-points-y: repeat(100%)
@@ -125,7 +127,7 @@ button
 .section
     min-height: $section-height
     min-height: calc( 100vh - #{$header-height} - #{$footer-height} )
-    padding-bottom: ($section-height / 2) + 50
+    padding-top: ($section-height / 2) + 50
     margin-bottom: $section-height / 2
     position: relative
     transform-style: preserve-3d
@@ -162,6 +164,7 @@ button
 
     &__subtitle
         font-size: 1.5rem
+
     &__controls
         display: flex
         align-items: center
@@ -178,6 +181,7 @@ button
     
     @media screen and ( min-width: 1024px )
         margin-bottom: $section-height * 1.5
+
         &__header
             transform: translateZ(-1px) scale(1.9)
 
@@ -202,6 +206,75 @@ button
             @media screen and ( min-width: 1280px )
                 grid-column: span 2
                 padding: 50%
+
+//==box__content==//
+
+.box
+    display: flex
+    flex: 1 0 0
+    position: relative
+    padding: $default-spacing
+    border-radius: $border-radius
+    font-size: .875rem
+    color: #fff
+    box-shadow: 0 19px 38px rgba(0, 0, 0, 0.30), 0 15px 12px rgba(0, 0, 0, 0.22)
+    transform: scale(1)
+    transition: all .25s ease
+    filter: brightness( 50%)
+
+
+    &:hover,
+    &:focus
+        transform: scale(1.07)
+        filter: brightness(110%)
+        z-index: 10
+    
+    &--weather
+        background-color: $teal
+    
+    &--cost
+        background-color: $lightblue
+    
+    &--locations
+        background-color: $indigo
+    
+    &--image,
+    &--video
+        padding: 0
+    &--video
+        //fake video
+        &::before,
+        &::after
+            content: ""
+            display: block
+            position: absolute
+            top: 50%
+            left: 50%
+            z-index: 10
+            transform: translate(-50%, -50%)
+        
+        &::before
+            width: 50%
+            height: 50%
+            background-color: #ffffff
+            border-radius: 50%
+            box-shadow: 0 0 38px rgba(0, 0, 0, 0.30)
+        &::after
+           width: 0
+           height: 0
+           border-style: solid
+           border-width: 10px 0 10px 15px
+           border-color: transparent transparent transparent $gray-dark
+           margin-left: 2px 
+    &__img
+        display: block
+        width: 100%
+        height: 100%
+        position: absolute
+        object-fit: cover
+        object-position: center
+        border-radius: $border-radius
+
                 
 
 
